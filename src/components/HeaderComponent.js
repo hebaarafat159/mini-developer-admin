@@ -11,6 +11,7 @@ import HeaderMenuTabs from './HeaderMenuTabs'
 import TermDates from '../pages/TermDates'
 import Testimonials from '../pages/Testimonials'
 import AddTestimonial from '../pages/addTestimonial'
+import AddCourse from '../pages/EditCourse'
 
 export default function HeaderComponent() {
     const theme = useTheme();
@@ -45,7 +46,13 @@ export default function HeaderComponent() {
             label: 'Add Testimonial',
             link: '/add-testimonial',
             component: <AddTestimonial />
-        }
+        },
+        {
+            position: 4,
+            label: 'Add Course',
+            link: '/add-course',
+            component: <AddCourse />
+        },
     ])
 
     function handleSelected(selectedItem) {

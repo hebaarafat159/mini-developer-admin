@@ -11,6 +11,7 @@ import ConsentForm from './pages/ConsentForm';
 import Testimonials from './pages/Testimonials';
 import { HelmetProvider } from "react-helmet-async";
 import AddTestimonial from './pages/addTestimonial';
+import AddCourse from './pages/EditCourse';
 
 function App() {
   return (
@@ -27,6 +28,8 @@ function App() {
             <Route path="/consent-form/:studentId" element={<ConsentForm />} />
             <Route path="/testimonials" element={<Testimonials />} />
             <Route path="/add-testimonial" element={<AddTestimonial />} />
+            <Route path="/add-course" element={<AddCourse />} />
+            <Route path="/edit-course/:courseId" element={<AddCourse />} />
           </Routes>
         </div>
         <meta content="width=device-width, initial-scale=1" name="viewport" />
