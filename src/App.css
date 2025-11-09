@@ -1,0 +1,433 @@
+.App {
+  text-align: center;
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: rgb(251, 240, 223);
+}
+
+.App-logo {
+  height: 10vmin;
+  pointer-events: none;
+}
+
+.Footer {
+  position: fixed;
+  bottom: 0;
+  height: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  color: #333440;
+  width: 100vw;
+  padding: .5vmin;
+  z-index: 1000;
+}
+
+.Header {
+  height: 8vmin;
+  width: auto;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+
+  /* position: fixed;
+  height: 15%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  background-color: white;
+  color: #333440;
+  width: 100vw;
+  padding: .5vmin; */
+  /* z-index: 1000; */
+}
+
+.icon {
+  width: 5vw;
+  height: auto;
+}
+
+.menuIcon {
+  color: #333440;
+  margin-left: auto;
+}
+
+.miniDeveloperText {
+  color: #ed7d45;
+  font-weight: bold;
+}
+
+.aboutTitle {
+  font-weight: 'bold';
+  /* font-size: '2vmin'; */
+  color: '#333440';
+}
+
+.aboutContent {
+  font-weight: 'normal';
+  /* font-size: '5vw'; */
+  color: '#333440';
+  padding: '2vmin auto';
+}
+
+.link_text {
+  color: #4F8DB9;
+  /* Default color */
+  font-size: 1vmin;
+  text-decoration: none;
+  font-weight: bold;
+  font-style: italic;
+  /* font-size: 1.2vw; */
+}
+
+.link_text.selected {
+  color: #ed7d45;
+  font-size: 1vmin;
+  text-decoration: none;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.link_text:hover {
+  font-weight: bold;
+  /* font-size: 1.5vw; */
+  color: #ed7d45;
+  text-decoration: none;
+}
+
+.course_card {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  background-color: white;
+  margin: 2.5vmin;
+}
+
+.course_card_details {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  padding: 5vmin;
+  background-color: white;
+}
+
+.course_card:hover {
+  transform: scale(1.05);
+  transition: transform 0.2s ease-in-out
+}
+
+.course_card_image {
+  width: 100%;
+  height: 200px;
+  padding-bottom: 5vmin;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+}
+
+.course_card_bold_text {
+  color: #333440;
+  font-weight: bold;
+}
+
+.page_content {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 5vmin 15vmin;
+  background-color: white;
+}
+
+.page_content_title {
+  font-weight: bold;
+  font-size: 2vw;
+}
+
+.page_content_text {
+  font-weight: normal;
+  font-size: 1.5vw;
+}
+
+.page_content_text_bold {
+  font-weight: bold;
+  font-size: 1.5vw;
+}
+
+.contentImage {
+  width: 20vw;
+  height: auto;
+}
+
+.subContentImage {
+  width: 10vw;
+  height: auto;
+}
+
+.register_form_component {
+  display: flex;
+  flex-flow: column wrap;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 5vmin;
+  background-color: white;
+  width: 40vw;
+}
+
+.register_form_subcomponent {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: center;
+  background-color: white;
+  width: 30vw;
+}
+
+.register_form_subcomponent_withborder {
+  display: flex;
+  direction: row;
+  background-color: white;
+  width: 30vw;
+  border-radius: 30;
+  border: gray .3vmin solid;
+  padding: 1vmin;
+}
+
+.register_form_text_field {
+  display: flex;
+  width: 30vw;
+}
+
+.course_details_content {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: flex-start;
+  justify-content: space-evenly;
+}
+
+.course_details_content_item {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
+  justify-content: center;
+  padding: 5vmin;
+}
+
+a.social {
+  margin: 0 0.3rem;
+  transition: transform 250ms;
+  display: inline-block;
+}
+
+a.social:hover {
+  transform: translateY(-2px);
+}
+
+a.whatsapp {
+  color: #23eb4b;
+}
+
+a.facebook {
+  color: #4968ad;
+}
+
+a.google {
+  color: #e1330c;
+}
+
+a.instagram {
+  color: #f40ba6;
+}
+
+/******************************************** new CSS  ***************************************************/
+.navbar {
+  display: flex;
+  flex-wrap: wrap;
+  /* Allows items to wrap to a new line if needed */
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.5rem 1rem;
+}
+
+.drawer {
+  width: 'auto';
+  color: #007bff;
+  font-weight: bold;
+  padding: 0.5rem 1rem;
+}
+
+.navbar-item {
+  margin: 0.5rem;
+  text-decoration: none;
+  color: #007bff;
+}
+
+.header {
+  height: 10vmin;
+  width: auto;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer {
+  height: 10vmin;
+  width: auto;
+  background-color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 2vmin;
+}
+
+.routes-container {
+  padding: 2vmin;
+}
+
+.home-page-block {
+  height: 75vmin;
+  position: relative;
+  overflow: hidden;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* margin: 2vmin auto; */
+}
+
+.home-page-block video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
+
+.home-page-block .coding-vedio-section {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  position: relative;
+  opacity: 0.9;
+}
+
+.home-page-block .coding-vedio-section h1 {
+  font-size: 5vmin;
+  color: white;
+  position: relative;
+  opacity: 0.9;
+}
+
+.home-page-block .coding-vedio-section h2 {
+  font-size: 4vmin;
+  font-style: italic;
+  color: white;
+  position: relative;
+}
+
+.ads-box {
+  height: 15%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #3498db;
+  color: white;
+  font-size: 2vmin;
+  width: 100%;
+  /* Name, duration, timing function, delay, repeat, direction, fill mode */
+  animation: changeColor .5s ease-in-out 1s infinite alternate both;
+}
+
+/* Animation Definition */
+@keyframes changeColor {
+  0% {
+    background-color: #3498db;
+  }
+
+  100% {
+    background-color: #e74c3c;
+  }
+}
+
+.brawn_btn {
+  border-radius: 10;
+  background: linear-gradient(to bottom, #e09b79, #9e532d);
+  font-size: 1.5vmin;
+  /* color: #5f6276; */
+  font-weight: bold;
+  width: max-content;
+}
+
+.orage_btn {
+  border-radius: 10;
+  background: linear-gradient(to bottom, #ffb093, #ed7d45);
+  font-size: 1.5vmin;
+  font-weight: bold;
+  width: max-content;
+}
+
+.gray_btn {
+  border-radius: 10;
+  background: linear-gradient(to bottom, #d6d7de, #b2b2b2);
+  font-size: 1.5vmin;
+  margin: '2vw';
+  /* color: #5f6276; */
+  font-weight: bold;
+  width: max-content;
+}
+
+.blue_btn {
+  border-radius: 10;
+  background: #1105ef;
+  font-size: 1.5vmin;
+  font-weight: bold;
+  width: max-content;
+  padding: 1vmin;
+}
+
+.page_content_dark {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 2vmin;
+  background-color: #333440;
+  /* margin: 2vmin auto; */
+}
+
+.page_content {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  align-items: center;
+  padding: 5vmin 2vmin;
+  background-color: white;
+}
+
+.page_content_title {
+  font-weight: bold;
+  font-size: 2vw;
+}
+
+.page_content_text {
+  font-weight: normal;
+  font-size: 1.5vw;
+}
+
+.page_content_text_bold {
+  font-weight: bold;
+  font-size: 1.5vw;
+}
