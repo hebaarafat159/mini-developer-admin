@@ -1,12 +1,11 @@
 
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import validator from "validator";
 import { TextField, Stack, Typography, Button, Grid } from '@mui/material'
 import { experimentalStyled as styled } from '@mui/material/styles';
 import Paper from '@mui/material/Paper';
 import YesOrNoComponent from '../components/YesOrNoComponent';
-import SEOComponent from '../components/SEOComponent.js'
 export default function ConsentForm() {
 
     const { studentId } = useParams();
@@ -101,12 +100,6 @@ export default function ConsentForm() {
 
     return (
         <Stack className='recent-blogs d-block screen'>
-            <SEOComponent
-                seoData={{
-                    seo_slug: `/consent-form/${studentObject.first_name}_${studentObject.last_name}`,
-                    seo_title: "Consent Form | Mini Developer",
-                    seo_description: "If your child is joining Mini Developer in-person coding classes , then kindly Fill this Consent Form"
-                }} />
             <Stack direction="column" spacing={2} sx={{ justifyContent: 'space-evenly', padding: '1.5vmin' }} >
                 <Typography component="h5" variant='h5' style={{ color: 'black', fontWeight: 'bold', justifyContent: 'center', alignItems: 'center', textAlign: 'center' }}> Mini Developer Consent Form </Typography>
                 <Typography component="p" variant='p' style={{ color: '#333440', justifyContent: 'center', alignItems: 'center', textAlign: 'center' }}> You are requested to kindly fill this consent form before you begin your coding journey with us. </Typography>

@@ -5,15 +5,13 @@ import { useMediaQuery, useTheme, Box, Link } from '@mui/material'
 
 import image from '../assets/mini-developer-logo.png'
 
-import Home from '../pages/Home'
-import ContactUs from '../pages/ContactUs'
 import Courses from '../pages/Courses'
 import HeaderDrawerComponent from './HeaderDrawerComponent'
 import HeaderMenuTabs from './HeaderMenuTabs'
-import OurVisionComponent from '../components/OurVisionComponent';
-import WhyUsComponent from '../components/WhyUsComponent';
 import TermDates from '../pages/TermDates'
 import Testimonials from '../pages/Testimonials'
+import AddTestimonial from '../pages/addTestimonial'
+
 export default function HeaderComponent() {
     const theme = useTheme();
     const isMatch = useMediaQuery(theme.breakpoints.down('lg'));// ('md'));
@@ -25,58 +23,28 @@ export default function HeaderComponent() {
     const [pages, setPages] = useState([
         {
             position: 0,
-            label: 'Home',
-            link: '/',
-            component: <Home />,
-            isSelected: false
-        },
-        {
-            position: 1,
             label: 'Our Courses',
-            link: '/our-courses',
+            link: '/',
             component: <Courses />,
             isSelected: false
         },
         {
             position: 2,
-            label: 'About',
-            isSelected: false,
-            subLinks: [
-                {
-                    position: 1,
-                    label: 'Our Vision',
-                    link: '/about/about-us',
-                    component: <OurVisionComponent />,
-                    isSelected: false
-                },
-                {
-                    position: 2,
-                    label: 'Why Us?',
-                    link: '/about/why-us',
-                    component: <WhyUsComponent />,
-                    isSelected: false
-                }
-            ]
-            // link: '/about',
-            // component: <About />
-        },
-        {
-            position: 3,
-            label: 'Contact Us',
-            link: '/contact-us',
-            component: <ContactUs />
-        },
-        {
-            position: 4,
             label: 'Term Dates',
             link: '/term-dates',
             component: <TermDates />
         },
         {
-            position: 5,
+            position: 3,
             label: 'Testimonials',
             link: '/testimonials',
             component: <Testimonials />
+        },
+        {
+            position: 3,
+            label: 'Add Testimonial',
+            link: '/add-testimonial',
+            component: <AddTestimonial />
         }
     ])
 

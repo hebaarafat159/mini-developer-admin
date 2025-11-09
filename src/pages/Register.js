@@ -6,7 +6,6 @@ import validator from "validator";
 import { useNavigate, useParams } from 'react-router-dom'
 import { experimentalStyled as styled } from '@mui/material/styles';
 import Paper from '@mui/material/Paper';
-import SEOComponent from '../components/SEOComponent.js'
 import { parse, isValid } from "date-fns";
 
 export default function RegisterForm() {
@@ -289,12 +288,6 @@ export default function RegisterForm() {
 
     return (
         <Stack className='recent-blogs d-block screen'>
-            <SEOComponent
-                seoData={{
-                    seo_slug: ((!validator.isEmpty(courseId)) && courseId !== '0') ? `/sign-up-form/${courseObject.seo_slug}` : '/sign-up-form/0',
-                    seo_title: "Sign Up Form | Mini Developer",
-                    seo_description: "Register for Mini Developer courses and let your child enjoy their journey with Coding. Get a free trail from Mini Developer."
-                }} />
             <Stack direction="column" spacing={2} sx={{ justifyContent: 'space-evenly', alignItems: 'center', padding: '1.5vmin' }} >
                 {/* course slogn */}
                 {

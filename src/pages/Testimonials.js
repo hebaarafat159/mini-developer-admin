@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Typography, Card, CardContent, Box, Container, Rating } from '@mui/material'
 import { Masonry } from "@mui/lab";
 import feedback_icon from '../assets/feedback_icon.png'

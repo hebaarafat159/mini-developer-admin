@@ -1,4 +1,4 @@
-import React from 'react'
+
 import { Stack, Typography, Button } from '@mui/material'
 import { useParams } from 'react-router-dom'
 export default function ConfirmationPage() {

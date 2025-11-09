@@ -1,14 +1,10 @@
 import './App.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from "./pages/Home";
-import ContactUs from "./pages/ContactUs";
 import Courses from "./pages/Courses";
 import HeaderComponent from './components/HeaderComponent';
+import CourseDetails from './pages/CourseDetails';
 import Footer from './components/Footer';
 import Register from './pages/Register';
-import CourseDetails from './pages/CourseDetails';
-import WhyUsComponent from './components/WhyUsComponent';
-import OurVisionComponent from './components/OurVisionComponent';
 import ConfirmationPage from './pages/ConfirmationPage';
 import TermDates from './pages/TermDates';
 import ConsentForm from './pages/ConsentForm';
@@ -23,12 +19,8 @@ function App() {
         <HeaderComponent />
         <div className={'routes-container'}>
           <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about/about-us" element={<OurVisionComponent />} />
-            <Route path="/about/why-us" element={<WhyUsComponent />} />
-            <Route path="/our-courses" element={<Courses />} />
+            <Route path="/" element={<Courses />} />
             <Route path="/our-courses/:id" element={<CourseDetails />} />
-            <Route path="/contact-us" element={<ContactUs />} />
             <Route path="/sign-up-form/:courseId" element={<Register />} />
             <Route path="/confirmation/:pageTitle" element={<ConfirmationPage />} />
             <Route path="/term-dates" element={<TermDates />} />

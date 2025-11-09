@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react'
+import { useState, useEffect } from 'react'
 import { Box, Typography, Grid, Divider, Stack, Link } from "@mui/material";
 import FreeTrialButton from '../components/FreeTrialButton.js'
 import course_details_language_icon from '../assets/course_details_language_icon.png'
@@ -140,7 +140,6 @@ export default function CourseDetails() {
                         <Typography component="p" variant='p' style={{ padding: '1vmin', textAlign: 'left' }}>Duration: {level.course_duration}  weeks</Typography>
 
                         {/* subjects */}
-                        {/* <CourseSubjectsComponent course_subjects={level.course_subjects} /> */}
                         {(level.course_subjects && level.course_subjects.length > 0) ?
                           <>
                             <Typography component="p" variant='p' style={{ color: '#174feb', padding: '1vmin', textAlign: 'left' }}>In this course you will learn: </Typography>

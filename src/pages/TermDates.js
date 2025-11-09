@@ -1,8 +1,7 @@
 import { Stack, Divider, Typography, Card } from "@mui/joy";
 import { Grid } from "@mui/material";
 import term_dates_img from '../assets/term_dates_img.png'
-import SEOComponent from '../components/SEOComponent.js'
-import React, { useEffect, useState, useRef } from 'react'
+import { useEffect, useState, useRef } from 'react'
 import { timelineItemClasses } from '@mui/lab/TimelineItem';
 import { Timeline, TimelineItem, TimelineSeparator, TimelineConnector, TimelineContent, TimelineDot } from "@mui/lab";
 
@@ -34,12 +33,6 @@ export default function TermDates() {
 
     return (
         <Stack className='recent-blogs d-block screen'>
-            <SEOComponent
-                seoData={{
-                    seo_slug: "term-dates",
-                    seo_title: "Term Dates | Mini Developer",
-                    seo_description: "Stay updated with Mini Developer's term dates of our coding classes for kids. Discover when each term begins, holiday breaks, and key dates to ensure your child doesn't miss out on our engaging and educational coding programs. Plan your schedule with ease and keep your child on track for a fun and productive learning journey!"
-                }} />
             {/* current term date section */}
             <Stack direction="row" spacing={1} sx={{ justifyContent: 'space-around', alignItems: 'center', background: 'linear-gradient(to bottom, #9192ca, #FFFFFF);', padding: '3vmin' }} >
                 <Grid container columns={{ xs: 2, sm: 8, md: 12 }} sx={{ justifyContent: 'center', alignItems: 'center' }}>
