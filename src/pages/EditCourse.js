@@ -1,8 +1,9 @@
 
 import { useState, useEffect } from 'react'
-import { Typography, Grid, Stack, TextField, IconButton } from "@mui/material";
+import { Typography, Grid, Stack, TextField, IconButton, Button } from "@mui/material";
 import { useParams } from 'react-router-dom'
 import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
+import LevelList from '../components/LevelList'
 
 export default function EditCourse() {
     const { courseId } = useParams();
@@ -16,12 +17,19 @@ export default function EditCourse() {
             })
     }, [courseId]);
 
-
     function handleChange(e) {
         const { name, value } = e.target;
         setCourse((prevCourse) => ({ ...prevCourse, [name]: value }));
     }
 
+    function updateList(levelsList) {
+        setCourse((prevCourse) => ({ ...prevCourse, [course.levels]: levelsList }));
+    }
+
+    function submit() {
+        alert(JSON.stringify(course));
+    }
+    
     return (
         <Stack className='recent-blogs d-block screen'>
             <Typography component="h5" variant='h5' style={{ color: '#ed7d45', fontWeight: 'bolder', justifyContent: 'center', alignItems: 'center', textAlign: 'center', fontFamily: 'Papyrus' }}>  {(course && course.title) ? "Edit Course" : "Add New Course"}</Typography>
@@ -165,13 +173,12 @@ export default function EditCourse() {
                         justifyContent: "space-between",
                         alignItems: "center",
                         paddingTop: "1.5vmin",
-                    }}
-                >
+                    }}>
+
                     <Grid item xs={8}>
                         <Typography
                             component="p"
-                            sx={{ color: "#333440", fontWeight: "bold" }}
-                        >
+                            sx={{ color: "#333440", fontWeight: "bold" }}>
                             Outcomes
                         </Typography>
                     </Grid>
@@ -182,6 +189,19 @@ export default function EditCourse() {
                     </Grid>
                 </Grid>
 
+                {/* Levels component view */}
+                <LevelList list={course?.levels ?? []} updateList={updateList} />
+
+                {/* Submit Button */}
+                <div style={{ display: 'flex', justifyContent: 'center', marginTop: '10px' }}>
+                    <Button
+                        variant="contained"
+                        onClick={() => submit()}
+                        className="orange_btn">
+
+                        Submit
+                    </Button>
+                </div>
             </Stack>
         </Stack>
     )
