@@ -1,13 +1,34 @@
 
 import { useState, useEffect } from 'react'
-import { Typography, Grid, Stack, TextField, IconButton, Button } from "@mui/material";
+import { Typography, Grid, Stack, TextField, IconButton, Button, Divider } from "@mui/material";
 import { useParams } from 'react-router-dom'
 import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
 import LevelList from '../components/LevelList'
 
 export default function EditCourse() {
     const { courseId } = useParams();
-    const [course, setCourse] = useState({})
+    const [course, setCourse] = useState({
+        title: "",
+        slogan: "",
+        age: 0,
+        language: "",
+        cover_image: "",
+        link: "",
+        periority: 1, // periority to appear on order of courses
+        course_duration: 0, // How long the course will be running.
+        session_duration: 0, // How long each session is.
+        price: 0,
+        type: "In-person or online",
+        seo_slug: "",
+        seo_title: "",
+        seo_description: "",
+        prerequisite_courses: [], // saved courses objectIds
+        description: "",
+        course_subjects: [],
+        course_skills: [],
+        levels: [],
+        is_super: false,
+    })
 
     useEffect(() => {
         fetch(`${process.env.REACT_APP_URL_APP_PATH}/courses/${courseId}`)
@@ -29,9 +50,9 @@ export default function EditCourse() {
     function submit() {
         alert(JSON.stringify(course));
     }
-    
+
     return (
-        <Stack className='recent-blogs d-block screen'>
+        <Stack className='recent-blogs d-block screen form_container'>
             <Typography component="h5" variant='h5' style={{ color: '#ed7d45', fontWeight: 'bolder', justifyContent: 'center', alignItems: 'center', textAlign: 'center', fontFamily: 'Papyrus' }}>  {(course && course.title) ? "Edit Course" : "Add New Course"}</Typography>
             <Stack direction="column" spacing={2} >
                 {/* Course Title */}
@@ -165,6 +186,54 @@ export default function EditCourse() {
                     </Grid>
                 </Grid>
 
+                {/* SEO Details */}
+                <Typography
+                    component="p"
+                    sx={{ color: "#333440", fontWeight: "bold", mt: 2, mb: 1 }}>
+                    SEO Details <span style={{ color: "red" }}>*</span>
+                </Typography>
+
+                <Grid container spacing={1}>
+                    {/* slug */}
+                    <Grid item xs={12} md={6}>
+                        <TextField
+                            label="SEO Slug"
+                            InputLabelProps={{ shrink: true }}
+                            variant="outlined"
+                            name="seo_slug"
+                            value={(course) ? course.seo_slug : ""}
+                            onChange={handleChange}
+                            required
+                            fullWidth
+                        />
+                    </Grid>
+
+                    {/* title */}
+                    <Grid item xs={12} md={6}>
+                        <TextField
+                            InputLabelProps={{ shrink: true }}
+                            label="SEO Title"
+                            name="seo_title"
+                            value={(course) ? course.seo_title : ""}
+                            onChange={handleChange}
+                            required
+                            fullWidth
+                        />
+                    </Grid>
+
+                    {/* SEO Description*/}
+                    <Grid item xs={12} md={12}>
+                        <TextField
+                            InputLabelProps={{ shrink: true }}
+                            label="SEO Description"
+                            name="seo_description"
+                            value={(course) ? course.seo_description : ""}
+                            onChange={handleChange}
+                            required
+                            fullWidth
+                        />
+                    </Grid>
+                </Grid>
                 {/* Outcomes */}
                 <Grid
                     container
@@ -189,6 +258,7 @@ export default function EditCourse() {
                     </Grid>
                 </Grid>
 
+                <Divider sx={{ mx: "auto", mt: 2 }} />
                 {/* Levels component view */}
                 <LevelList list={course?.levels ?? []} updateList={updateList} />
 

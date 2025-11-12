@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react"
-import { Grid, Typography, Button, Stack } from "@mui/material";
+import { Grid, Typography, Button, IconButton } from "@mui/material";
 import { Accordion, AccordionGroup, AccordionDetails, AccordionSummary } from "@mui/joy";
+import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
 
 import NewModal from "./NewModal";
 import UpdateModal from "./UpdateModal";
@@ -81,38 +82,61 @@ export default function LevelList({ list, updateList }) {
 
     return (
         <>
-            <Stack className='recent-blogs d-block screen'>
-                <Grid container sx={{ display: 'flex', justifyContent: 'space-between', padding: '1.5vmin', alignItems: 'center' }}>
-                    <Grid xs={8} md={8} >
-                        <Typography component="p" variant='p' style={{ color: '#333440', fontWeight: 'bold', alignItems: 'flex-start' }}> Levels </Typography>
-                    </Grid>
-                    <Grid xs={2} md={2} sx={{ display: 'flex', justifyContent: 'flex-end' }}>
-                        <Button
-                            variant="contained"
-                            onClick={() => handleNewModal()}
-                            className={'blue_btn'}> Add Level </Button>
-                    </Grid>
-                </Grid>
-                <Grid item xs={12} md={12}>
 
-                    <AccordionGroup>
-                        {levels ? levels.map((level, index) => (
-                            <Accordion key={index}>
-                                <AccordionSummary>
-                                    <Typography component="p" variant='p' style={{ color: '#333440', fontWeight: 'bold', alignItems: 'flex-start' }}> {level.title} </Typography>
-                                </AccordionSummary>
-                                <AccordionDetails>
-                                    <div>
-                                        <Button variant="soft" onClick={() => handleUpdateModal(level)}>Edit Level</Button>
-                                        <Button variant="outlined" onClick={() => handleDeleteModal(level)}>Delete Level</Button>
-                                    </div>
-                                </AccordionDetails>
-                            </Accordion>
-                        )) : null}
-                    </AccordionGroup>
+            {/* Outcomes */}
+            <Grid
+                container
+                sx={{
+                    display: "flex",
+                    justifyContent: "space-between",
+                    alignItems: "center",
+                    paddingTop: "1.5vmin",
+                }}>
 
+                <Grid item xs={8}>
+                    <Typography
+                        component="p"
+                        sx={{ color: "#333440", fontWeight: "bold" }}>
+                        Levels
+                    </Typography>
                 </Grid>
-            </Stack>
+                <Grid item xs={2} sx={{ display: "flex", justifyContent: "flex-end" }}>
+                    <IconButton color="primary" onClick={() => handleNewModal()}>
+                        <AddCircleOutlineIcon />
+                    </IconButton>
+                </Grid>
+            </Grid>
+            {/* <Grid container sx={{ display: 'flex', justifyContent: 'space-between', padding: '1.5vmin', alignItems: 'center' }}>
+                <Grid xs={8} md={8} >
+                    <Typography component="p" variant='p' style={{ color: '#333440', fontWeight: 'bold', alignItems: 'flex-start' }}> Levels </Typography>
+                </Grid>
+                <Grid xs={2} md={2} sx={{ display: 'flex', justifyContent: 'flex-end' }}>
+                    <Button
+                        variant="contained"
+                        onClick={() => handleNewModal()}
+                        className={'blue_btn'}> Add Level </Button>
+                </Grid>
+            </Grid> */}
+            <Grid item xs={12} md={12}>
+
+                <AccordionGroup>
+                    {levels ? levels.map((level, index) => (
+                        <Accordion key={index}>
+                            <AccordionSummary>
+                                <Typography component="p" variant='p' style={{ color: '#333440', fontWeight: 'bold', alignItems: 'flex-start' }}> {level.title} </Typography>
+                            </AccordionSummary>
+                            <AccordionDetails>
+                                <div>
+                                    <Button variant="soft" onClick={() => handleUpdateModal(level)}>Edit Level</Button>
+                                    <Button variant="outlined" onClick={() => handleDeleteModal(level)}>Delete Level</Button>
+                                </div>
+                            </AccordionDetails>
+                        </Accordion>
+                    )) : null}
+                </AccordionGroup>
+
+            </Grid>
+
 
             {/* show Add new level dialoge */}
             <NewModal
