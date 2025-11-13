@@ -86,6 +86,8 @@ export default function EditCourse() {
                             name="description"
                             label="Description"
                             value={(course) ? course.description : ""}
+                            multiline
+                            rows={4}
                             onChange={handleChange}
                             required
                             fullWidth
@@ -228,6 +230,8 @@ export default function EditCourse() {
                             label="SEO Description"
                             name="seo_description"
                             value={(course) ? course.seo_description : ""}
+                            multiline
+                            rows={2}
                             onChange={handleChange}
                             required
                             fullWidth
