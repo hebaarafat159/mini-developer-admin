@@ -106,17 +106,8 @@ export default function LevelList({ list, updateList }) {
                     </IconButton>
                 </Grid>
             </Grid>
-            {/* <Grid container sx={{ display: 'flex', justifyContent: 'space-between', padding: '1.5vmin', alignItems: 'center' }}>
-                <Grid xs={8} md={8} >
-                    <Typography component="p" variant='p' style={{ color: '#333440', fontWeight: 'bold', alignItems: 'flex-start' }}> Levels </Typography>
-                </Grid>
-                <Grid xs={2} md={2} sx={{ display: 'flex', justifyContent: 'flex-end' }}>
-                    <Button
-                        variant="contained"
-                        onClick={() => handleNewModal()}
-                        className={'blue_btn'}> Add Level </Button>
-                </Grid>
-            </Grid> */}
+
+            {/* Levels  */}
             <Grid item xs={12} md={12}>
 
                 <AccordionGroup>

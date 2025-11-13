@@ -1,34 +1,15 @@
 import { useEffect, useState } from "react";
-import { Card, TextField, Typography, Grid, Button, IconButton } from "@mui/material";
+import { Card, TextField, Typography, Grid, Button } from "@mui/material";
 import { Modal } from "@mui/joy";
-import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
+import SubjectList from "./SubjectList";
 
 export default function LevelForm({ levelObject, showModal, closeModal, updateData, }) {
-    const [level, setLevel] = useState({
-        _id: "",
-        title: "",
-        age: 0,
-        language: "",
-        session_duration: 0,
-        course_duration: 0,
-        price: 0.0,
-        ranking: 0, // Indicates course priority — 1 is the first to view
-        outcomes: [],
-    });
+    const [level, setLevel] = useState({});
 
     // If updating level, set initial values
     useEffect(() => {
         if (levelObject) {
-            setLevel({
-                _id: levelObject._id || "",
-                title: levelObject.title || "",
-                age: levelObject.age || 0,
-                language: levelObject.language || "",
-                session_duration: levelObject.session_duration || 0,
-                course_duration: levelObject.course_duration || 0,
-                price: levelObject.price || 0.0,
-                outcomes: levelObject.outcomes || [],
-            });
+            setLevel(() => ({ ...levelObject }));
         }
     }, [levelObject]);
 
@@ -202,30 +183,8 @@ export default function LevelForm({ levelObject, showModal, closeModal, updateDa
                         </Grid>
                     </Grid>
 
-                    {/* Outcomes */}
-                    <Grid
-                        container
-                        sx={{
-                            display: "flex",
-                            justifyContent: "space-between",
-                            alignItems: "center",
-                            paddingTop: "1.5vmin",
-                        }}
-                    >
-                        <Grid item xs={8}>
-                            <Typography
-                                component="p"
-                                sx={{ color: "#333440", fontWeight: "bold" }}
-                            >
-                                Outcomes
-                            </Typography>
-                        </Grid>
-                        <Grid item xs={2} sx={{ display: "flex", justifyContent: "flex-end" }}>
-                            <IconButton color="primary">
-                                <AddCircleOutlineIcon />
-                            </IconButton>
-                        </Grid>
-                    </Grid>
+                    {/* Subjects Or Outcomes */}
+                    <SubjectList list={level?.course_subjects ?? []} />
 
                     {/* Submit Button */}
                     <Grid

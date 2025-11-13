@@ -1,9 +1,9 @@
 
 import { useState, useEffect } from 'react'
-import { Typography, Grid, Stack, TextField, IconButton, Button, Divider } from "@mui/material";
+import { Typography, Grid, Stack, TextField, Button, Divider } from "@mui/material";
 import { useParams } from 'react-router-dom'
-import AddCircleOutlineIcon from "@mui/icons-material/AddCircleOutline";
 import LevelList from '../components/LevelList'
+import SubjectList from '../components/SubjectList';
 
 export default function EditCourse() {
     const { courseId } = useParams();
@@ -235,7 +235,7 @@ export default function EditCourse() {
                     </Grid>
                 </Grid>
                 {/* Outcomes */}
-                <Grid
+                {/* <Grid
                     container
                     sx={{
                         display: "flex",
@@ -257,6 +257,9 @@ export default function EditCourse() {
                         </IconButton>
                     </Grid>
                 </Grid>
+  */}
+                {/* Subjects Or Outcomes */}
+                <SubjectList list={course?.course_subjects ?? []} />
 
                 <Divider sx={{ mx: "auto", mt: 2 }} />
                 {/* Levels component view */}
